@@ -1,0 +1,9 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Clipper – Login</title>
+<style>body{font:16px/1.6 system-ui,sans-serif;max-width:720px;margin:40px auto;padding:0 16px}</style></head><body>
+<h1>Clipper login</h1><p id="m">Handing the authorization to Clipper on this computer…</p>
+<script>
+// OAuth redirect target: forwards code/state to the local Clipper listener. Nothing is stored or sent anywhere else.
+var q = location.search;
+if (/[?&](code|error)=/.test(q)) { location.replace("http://localhost:17565/callback/" + q); }
+else { document.getElementById("m").textContent = "No authorization data in this URL."; }
+</script></body></html>
